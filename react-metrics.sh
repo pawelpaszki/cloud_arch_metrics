@@ -3,7 +3,7 @@ INSTANCE_ID=$(curl -s http://169.254.169.254/latest/meta-data/instance-id)
 
 CPU_USED_USER=$(iostat | tail -5 | head -1 | awk '{print $1}')
 CPU_USED_SYSTEM=$(iostat | tail -5 | head -1 | awk '{print $3}')
-CPU_USED_IOWAIT=$(iostat | tail -5 | head -1 | awk '{print $3}')
+CPU_USED_IOWAIT=$(iostat | tail -5 | head -1 | awk '{print $4}')
 CPU_IDLE=$(iostat | tail -5 | head -1 | awk '{print $6}')
 MEMORY_TOTAL=$(free | tail -2 | head -1 | awk '{print $2}')
 MEMORY_USED=$(free | tail -2 | head -1 | awk '{print $3}')
